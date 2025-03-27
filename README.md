@@ -4,6 +4,6 @@ This repository contains my current nix system configuration.
 
 ## Dependencies
 
-- nix-darwin
-- home-manager
-- nix-homebrew
+- `nix-darwin`
+- `home-manager`
+- `nix-homebrew`
