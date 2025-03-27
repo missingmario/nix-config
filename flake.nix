@@ -39,6 +39,7 @@
 
         ./home
         ./home/users/mario
+        ./home/files
       ];
     in
     {

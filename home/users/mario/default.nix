@@ -11,10 +11,6 @@ let
     pkgs.nixd
     pkgs.lua-language-server
   ];
-  file = {
-    ".config/ghostty/config".source = ./files/config/ghostty/config;
-    ".config/zsh/modules".source = ./files/config/zsh/modules;
-  };
   programs = {
     zsh = {
       enable = true;
@@ -71,7 +67,6 @@ in
       stateVersion = "24.11";
 
       inherit packages;
-      inherit file;
     };
 
     inherit programs;
