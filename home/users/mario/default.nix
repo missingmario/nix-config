@@ -7,6 +7,8 @@ let
   packages = [
     pkgs.tree
 
+    pkgs.tree-sitter
+
     pkgs.nixfmt-rfc-style
     pkgs.nixd
     pkgs.lua-language-server
