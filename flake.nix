@@ -27,23 +27,28 @@
 
         rev = self.rev or self.dirtyRev or null;
       };
+      specialArgs = {
+        inherit vars;
+      };
+      modules = [
+        home-manager.darwinModules.home-manager
+        nix-homebrew.darwinModules.nix-homebrew
+
+        ./system/darwin
+        ./system/darwin/homebrew
+
+        ./home
+        ./home/users/mario
+      ];
     in
     {
-      darwinConfigurations."mario-macos-vm" = nix-darwin.lib.darwinSystem {
-        specialArgs = {
-          inherit vars;
-        };
-        modules = [
-          home-manager.darwinModules.home-manager
-          nix-homebrew.darwinModules.nix-homebrew
-
-          ./system/darwin
-          ./system/darwin/homebrew
-
-          ./home
-          ./home/users/mario
-        ];
+      darwinConfigurations."mario-macbook" = nix-darwin.lib.darwinSystem {
+        inherit specialArgs;
+        inherit modules;
+      };
+      darwinConfigurations."mario-macbook-vm-macos" = nix-darwin.lib.darwinSystem {
+        inherit specialArgs;
+        inherit modules;
       };
     };
-
 }
